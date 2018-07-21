@@ -53,6 +53,10 @@
         </div>
         <button type="submit" name="signup" class="btn btn-primary">Sign Up</button>
         </div>
+        <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1">I agree not to provide Non-veg food, Sweets and Dairy products</label>
+</div>
 
  <?php
         if(isset($_POST['signup']))

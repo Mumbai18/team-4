@@ -46,8 +46,13 @@
   <script>
    var map;
     $("#directions").click(function () {
+
+      
         var originLoc = document.getElementById('txtFrom').value;
           var destinationLoc = document.getElementById('txtTo').value;
+
+
+
       var selectedMode = document.getElementById('mode').value;
           var geocoder = new google.maps.Geocoder;
           var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -87,7 +92,7 @@
       });
     }
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB02kJAA_uRSYZ823KxsKM3B1yQemFj4s&callback=initMap">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP-ikBXYOcDbEe1YBprgDSFyiv2N7uPVI&callback=initMap">
 
   </script>
 </body>

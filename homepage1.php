@@ -588,13 +588,5 @@ session_start();
 </div>
 </div>
 </div>
-<h3>welcome
-            <?php echo $_SESSION['email_id'] ?>
-            </h3>
-            <center>
-            <form method="post"  action="homepage1.php">
-            <input type="submit" id=logout value="log out"/><br>
-            </from>
-            </div>
 </body>
 </html>

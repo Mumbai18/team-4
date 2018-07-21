@@ -56,7 +56,7 @@
 
 
     $("#directions").click(function () {
-       
+
         var originLoc = document.getElementById('txtFrom').value;
 
 
@@ -85,7 +85,7 @@
           directionsService.route ({
             origin: originLoc,
             destination: destinationLoc,
-            travelMode: google.maps.TravelMode[selectedMode],
+            travelMode: 'DRIVING',
             avoidHighways: false,
             avoidTolls: false
           }, function (response, status) {
@@ -121,3 +121,9 @@
 </body>
 
 </html>
+
+<? php
+
+
+
+?>

@@ -1,19 +1,21 @@
 <?php
 $link = mysqli_connect("localhost" , "root" , "");
-$username = $_POST['username'];
+$email = $_POST['email'];
 $password = $_POST['password'];
-$username = stripcslashes($username);
+$email = stripcslashes($email);
 $password = stripcslashes($password);
-$username = mysqli_real_escape_string($link, $username);
+$email = mysqli_real_escape_string($link, $email);
 $password = mysqli_real_escape_string($link, $password);
 
 mysqli_select_db($link,"login");
-$result = mysqli_query($link,"select * from users where usernae ='$username' and password='$password';") or die("Failed to connect =".mysqli_error($link));
+$result = mysqli_query($link,"select * from donors where email ='$email' and password='$password';") or die("Failed to connect =".mysqli_error($link));
 $row = mysqli_fetch_array($result);
-if ($row['usernae'] == $username && $row['password']== $password) {
-	echo "<script> alert('You have logged in Successfully.!!') </script>";
-	echo "<script> window.open('donorlogin.php','_self') </script>";
+if ($row['email'] == $email && $row['password']== $password) 
+{
 	# code...
+	//valid
+	$_SESSION['email_id']=$email_id;
+	header('location:homepage.html');
 }
 
 else {

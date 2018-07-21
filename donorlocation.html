@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>donor location</title>
+
+	
+</head>
+<body>
+<div id="demo">
+	
+	
+
+</div>
+<button onclick="getLocation()">current Location</button>
+<script>
+var x = document.getElementById("demo");
+alert(x);
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML ="https://www.google.co.in/maps/place/@"+position.coords.latitude+","+position.coords.longitude+",17z/data=!3m1!4b1!4m5!3m4!1s0x3be7b6f43750b7f7:0xfd80375271428fb!8m2!3d"+position.coords.latitude+"!4d72.832531?hl=en"
+    //"Latitude: " + position.coords.latitude + 
+   // "<br>Longitude: " + position.coords.longitude; 
+}
+</script>
+</body>
+</html>

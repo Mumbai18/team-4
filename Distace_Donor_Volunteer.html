@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Donor to Volunteer distance</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="right-panel">
+    Donor:
+    <input type="text" id="txtFrom" value="Give me Donor Location" />
+    Volunteer:
+    <input type="text" id="txtTo" value="Give me Volunteer Location"/>
+    <button id="distance">Get distance</button>
+    <div>
+      <strong>Distance</strong>
+    </div>
+    <div id="output"></div>
+
+  </div>
+
+  <script>
+    var origin;
+    var destination;
+    var results;
+    $("#distance").click(function () {
+     //origin = document.getElementById('txtFrom').value;
+
+         //taking Dummy location of Donor
+          origin = new google.maps.LatLng(37.4419, -122.1419);
+
+          //The lat longitudes are dummy, for convenience
+
+          //destination = document.getElementById('txtTo').value;
+
+
+          //taking Dummy location of Donor
+          destination = new google.maps.LatLng(38.22, -125.1419);
+          var geocoder = new google.maps.Geocoder;
+          var service = new google.maps.DistanceMatrixService;
+          //getting distance from Google
+          service.getDistanceMatrix(
+            origins: [origin],
+            destinations: [destination],
+            travelMode: 'DRIVING',
+            unitSystem: google.maps.UnitSystem.METRIC,
+            avoidHighways: false,
+            avoidTolls: false
+          }, function (response, status) {
+            if (status !== 'OK') {
+              alert('Error was: ' + status);
+            } else {
+              var originList = response.originAddresses;
+              var destinationList = response.destinationAddresses;
+              var outputDiv = document.getElementById('output');
+              outputDiv.innerHTML = '';
+              for (var i = 0; i < originList.length; i++) {
+                results = response.rows[i].elements;
+                for (var j = 0; j < results.length; j++) {
+                  outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
+                    ': ' + results[j].distance.text + ' in ' +
+                    results[j].duration.text + '<br>';
+                }
+              }
+            }
+          });
+    });
+
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB02kJAA_uRSYZ823KxsKM3B1yQemFj4s">
+
+  </script>
+</body>
+
+</html>

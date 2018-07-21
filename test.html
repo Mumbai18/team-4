@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test Map</title>
+    <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
-      
       #map {
         height: 100%;
       }
-      
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
     </style>
   </head>
   <body>
@@ -18,7 +22,7 @@
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 12.9400715, lng: 77.653811},
+          center: {lat: 19.1714867, lng: 72.774886},
           zoom: 8
         });
       }
@@ -26,4 +30,3 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB02kJAA_uRSYZ823KxsKM3B1yQemFj4s&callback=initMap"
     async defer></script>
   </body>
-</html>

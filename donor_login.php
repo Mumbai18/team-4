@@ -57,8 +57,8 @@
 </div>
 
 <div style="margin: 7px">
-<a class="btn btn-primary btn-sm" style="width:15%">Request volunteer</a>
-<a type="button" class="btn btn-secondary btn-sm" style="width:15%"> Volunteer</a>
+<a class="btn btn-primary btn-sm" style="width:15%" name="request_v">Request volunteer</a>
+<a type="button" class="btn btn-secondary btn-sm" style="width:15%" name="volunteer"> Volunteer</a>
 </div>
 
 </form>	

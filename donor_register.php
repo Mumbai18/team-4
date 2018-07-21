@@ -1,3 +1,6 @@
+<?php
+require'connect.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,20 +31,26 @@
 <form>
 <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
-    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" required>
+    <input type="text" name="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" required>
     <small id="emailHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
   </div>
 
   <div class="form-group">
     <label for="CD">Contact Details</label>
-    <input type="number" class="form-control" id="CD" placeholder="Contact Details">
+    <input type="number" name="Phone_no" class="form-control" id="CD" placeholder="Contact Details">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email Id</label>
+    <input type="email" class="form-control" name="email_id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required/>
   </div>
 
   <div class="form-group">
    <label for="exampleFormControlTextarea1">Address</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" name="Address" id="exampleFormControlTextarea1" rows="3"></textarea>
   
-  </div>
+    
+
   <div class="form-group">
             <label>Password</label>
             <input type="password" name="password" placeholder="type the password" required>
@@ -58,13 +67,16 @@
         if(isset($_POST['signup']))
     {
            // echo '<script type="text/javascript">alert("sign up button clicked")</script>';
-        $username = $_POST['name'];
+        $name = $_POST['name'];
+        $Phone_no = $_POST['Phone_no'];
+        $email_id = $_POST['email_id'];
+        $Address=$_POST['Address'];
         $password=$_POST['password'];
         $cpassword=$_POST['cpassword'];
 
         if($password==$cpassword)
         {
-            $query="select * from user where username='$username' ";
+            $query="select * from email_id where email_id='$email_id' ";
             $query_run=mysqli_query($con,$query);
 
             if(mysqli_num_rows($query_run)>0)
@@ -74,7 +86,7 @@
             }
             else
             {
-                $query="insert into user values('$username','$password')";
+                $query="insert into user values('$name',$Phone_no,$email_id,$Address,'$password')";
                 $query_run=mysqli_query($con,$query);
 
             if($query_run)

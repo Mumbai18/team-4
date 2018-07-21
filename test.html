@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
-<!--refer https://developers.google.com/maps/documentation/static-maps/ -->
-<head>
-  <title>Simple Map</title>
-  <meta name="viewport" content="initial-scale=1.0">
-</head>
-
-<body>
-<img src="https://maps.googleapis.com/maps/api/staticmap?size=512x512&zoom=12&center=Mumbai&format=png&style=feature:road.highway%7Celement:geometry%7Cvisibility:simplified%7Ccolor:0xc280e9&style=feature:transit.line%7Cvisibility:simplified%7Ccolor:0xbababa&style=feature:road.highway%7Celement:labels.text.stroke%7Cvisibility:on%7Ccolor:0xb06eba&style=feature:road.highway%7Celement:labels.text.fill%7Cvisibility:on%7Ccolor:0xffffff&key=AIzaSyAMxdGmGa60mA7EV-iPYauPrj9XB35qA6Q"/>
-
-</body>
+  <head>
+    <title>Test Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      
+      #map {
+        height: 100%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 12.9400715, lng: 77.653811},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB02kJAA_uRSYZ823KxsKM3B1yQemFj4s&callback=initMap"
+    async defer></script>
+  </body>
 </html>

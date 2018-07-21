@@ -3,7 +3,7 @@
 <head>
 	<title>Annadhan</title>
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-	<style>
+		<style>
 	.col-xs-12{
 		margin: 5px;
 		padding: 10px 20%;
@@ -12,6 +12,9 @@
 		background: orange;
 		color: black;
 		padding: 10px;
+	}
+	.p{
+		padding: 5px;
 	}
 </style>
 </head>
@@ -23,14 +26,17 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<a href="donorreg.html" class="btn btn-primary btn-lg" role="button" >Register as a Donor</a>
+					<p>Email:</p><input type="email" name="E-mail" placeholder="example@gmail.com">
 				</div>
 				<div class="col-xs-12">
-					<a href="donorlogin.html" class="btn btn-success btn-lg" role="button" >Login</a>
+					<p>Password:</p><input type="password" name="Password" placeholder="Enter your password">
+				
 				</div>	
+
 				<div class="col-xs-12">
-					<a href="auth.html" class="btn btn-success btn-lg" role="button" >Donate as a guest</a>
-				</div>		
+					<button type="submit" class="btn btn-success btn-md" role="button" align="center">Login</button>
+				
+				</div>	
 			</div>	
 			</div>	
 

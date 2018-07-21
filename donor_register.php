@@ -28,7 +28,7 @@ require'connect.php';
     <p class="lead">Please fill in these details to proceed</p>
   </div>
 </div>
-<form>
+<form action="donor_register.php" method="post">
 <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
     <input type="text" name="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" required>
@@ -71,7 +71,7 @@ require'connect.php';
         if(isset($_POST['signup']))
     {
            // echo '<script type="text/javascript">alert("sign up button clicked")</script>';
-        $name = $_POST['name'];
+        $name = $_POST['Name'];
         $Phone_no = $_POST['Phone_no'];
         $email_id = $_POST['email_id'];
         $Address=$_POST['Address'];
@@ -80,18 +80,17 @@ require'connect.php';
 
         if($password==$cpassword)
         {
-            $query="select * from email_id where email_id='$email_id' ";
-            $query_run=mysqli_query($con,$query);
+           // $query="select * from donors where email_id='$email_id' ";
+            //$query_run=mysqli_query($conn,$query);
 
-            if(mysqli_num_rows($query_run)>0)
-            {
-                echo '<script type="text/javascript">alert("already there")</script>';
+            //if(@mysqli_num_rows($query_run)>0)
+            //{
+              //  echo '<script type="text/javascript">alert("already there")</script>';
 
-            }
-            else
-            {
-                $query="insert into user values('$name',$Phone_no,$email_id,$Address,'$password')";
-                $query_run=mysqli_query($con,$query);
+            //}
+    
+                $query="insert into donors values('$name',$Phone_no,$email_id,$Address,'$password')";
+                $query_run=mysqli_query($conn,$query);
 
             if($query_run)
                 {
@@ -109,7 +108,7 @@ require'connect.php';
         {
             echo '<script type="text/javascript">alert("password not match!")</script>';
         }
-    }
+    
     
         
         ?>

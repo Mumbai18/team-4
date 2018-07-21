@@ -15,7 +15,7 @@ if ($row['email'] == $email && $row['password']== $password)
 	# code...
 	//valid
 	$_SESSION['email_id']=$email_id;
-	header('location:homepage.html');
+	header('location:homepage1.html');
 }
 
 else {

@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Donor to Volunteer distance</title>
+
 <script>
 // *** This is a test script file, to draw the distance on the map form JpMorgan Office to SPIT College***
 
@@ -20,6 +25,7 @@
             function calcRoute() {
                 var start = new google.maps.LatLng(19.1714867, 72.774886);
                 var end = new google.maps.LatLng(19.1190415, 72.840626);
+
 
                 var request = {
                     origin: start,

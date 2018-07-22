@@ -1,3 +1,28 @@
+<?php include('connect.php');?>
+
+<?php
+//$email=mysqli_real_escape_string($conn,$_POST["email"]);
+$sql = "SELECT * FROM donors where email='bkjsd@zc.bsjdv'";
+$result = mysqli_query($conn, $sql);
+
+if ($result->num_rows > 0) {
+    //echo "<br><table><tr><th>First name</th><th>Room No.</th><th>Name</th><th>Gender</th><th>Phone No.</th><th>Age</th><th>Address</th></tr>";
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      $don=$row['address'];
+    }
+}
+$sql = "SELECT * FROM volunteers where email='bkjsd@zc.bsjdv'";
+$result = mysqli_query($conn, $sql);
+
+if ($result->num_rows > 0) {
+    //echo "<br><table><tr><th>First name</th><th>Room No.</th><th>Name</th><th>Gender</th><th>Phone No.</th><th>Age</th><th>Address</th></tr>";
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      $vol=$row['address'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <!--refer https://developers.google.com/maps/documentation/javascript/directions -->
@@ -46,13 +71,8 @@
   <script>
    var map;
     $("#directions").click(function () {
-
-      
-        var originLoc = document.getElementById('txtFrom').value;
-          var destinationLoc = document.getElementById('txtTo').value;
-
-
-
+        var originLoc = "<?php echo $don ?>";
+          var destinationLoc = "<?php echo $don ?>" ;
       var selectedMode = document.getElementById('mode').value;
           var geocoder = new google.maps.Geocoder;
           var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -92,7 +112,7 @@
       });
     }
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe46uoFVEaPTJJ3VQhFB-nOuXpRKGWwbE&callback=initMap">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB02kJAA_uRSYZ823KxsKM3B1yQemFj4s&callback=initMap">
 
   </script>
 </body>

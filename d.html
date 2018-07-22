@@ -3,69 +3,38 @@
 <head>
 	<title>Annadhan</title>
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-		<style>
+	<style>
 	.col-xs-12{
 		margin: 5px;
 		padding: 10px 20%;
 	}
-
-	.p{
-
-		padding: 5px;
-	}
-	.a{
-		margin:5px;
-	}
-	.h1{
-		margin: 5px;
-		padding: 5px;
+	.page-header{
+		background: orange;
+		color: black;
+		padding: 10px;
 	}
 </style>
 </head>
 <body>
 		<div class="container">
-			<div class="jumbotron">
 			<img src="ana.jpg" align="center" width="200px" height="150px">
 			<div class="page-header">
 					<h1>Annadhan</h1>
-					<p>What is left is not over</p>
 			</div>
-		</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<p>Username:</p><input type="email" id="username" placeholder="Enter you Annadhan username">
+					<a href="donorreg.html" class="btn btn-primary btn-lg" role="button" >Register as a Donor</a>
 				</div>
 				<div class="col-xs-12">
-					<p>Password:</p><input type="password" id="password" placeholder="Enter your  Annadhan  password">
-				
+					<a href="donorlogin.html" class="btn btn-success btn-lg" role="button" >Login</a>
 				</div>	
-				<div class="col-xs-12">
-				<input type="button" class="btn btn-primary btn-md"  align="center" value="Login"  onclick="javascript:validate()" />
-				<div class="col-xs-12">
-
-				<script type="text/javascript">
-		function validate()
-	{
-		if(   document.getElementById("username").value == "Annadhan"
-		   && document.getElementById("password").value == "1234" )
-		{
-			alert( "validation succeeded" );
-			location.href="admin_dashboard.html";
-		}
-		else
-		{
-			alert( "validation failed" );
-		}
-	}
-</script>
-
-
+					
 			</div>	
 			</div>	
 
 		</div>
 
-	
+
 
 
 

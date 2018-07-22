@@ -33,23 +33,39 @@
 		</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<p>Email:</p><input type="email" name="E-mail" placeholder="example@gmail.com">
+					<p>Username:</p><input type="email" id="username" placeholder="Enter you Annadhan username">
 				</div>
 				<div class="col-xs-12">
-					<p>Password:</p><input type="password" name="Password" placeholder="Enter your password">
+					<p>Password:</p><input type="password" id="password" placeholder="Enter your  Annadhan  password">
 				
 				</div>	
-
 				<div class="col-xs-12">
-					<button type="submit" class="btn btn-primary btn-md" role="button" align="center">Login</button>
-				
-				</div>	
+				<input type="button" class="btn btn-primary btn-md"  align="center" value="Login"  onclick="javascript:validate()" />
+				<div class="col-xs-12">
+
+				<script type="text/javascript">
+		function validate()
+	{
+		if(   document.getElementById("username").value == "Annadhan"
+		   && document.getElementById("password").value == "1234" )
+		{
+			alert( "validation succeeded" );
+			location.href="admin_dashboard.html";
+		}
+		else
+		{
+			alert( "validation failed" );
+		}
+	}
+</script>
+
+
 			</div>	
 			</div>	
 
 		</div>
 
-
+	
 
 
 

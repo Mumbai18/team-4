@@ -30,9 +30,7 @@ else{
      $result = mysqli_query($conn,"INSERT INTO volunteers(name,email,phno,address,password) VALUES('$name','$email',$phno,'$address','$password')");
 	if ($result) {
 		
-		echo '<script language="javascript">';
-        echo 'alert("Registered successsfully!!")';
-        echo '</script>';
+		echo '<script language="javascript">window.open("homepage1.html","_self")</script>';
 
 	}
 }

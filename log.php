@@ -1,5 +1,5 @@
+<?php include('connect.php');?>
 <?php
-$link = mysqli_connect("localhost" , "root" , "");
 $email = $_POST['email'];
 $password = $_POST['password'];
 $email = stripcslashes($email);

@@ -2,7 +2,7 @@
 ini_set('display_errors','1');
 
 // Create connection
-$conn = mysqli_connect('localhost','root','','annadhan');
+$conn = mysqli_connect('http://54.169.108.10','root','team4+TEAM4','annadhan');
 
 // Check connection
 if (!$conn) {

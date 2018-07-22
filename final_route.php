@@ -2,7 +2,7 @@
 
 <?php
 //$email=mysqli_real_escape_string($conn,$_POST["email"]);
-$sql = "SELECT * FROM donors where email='bkjsd@zc.bsjdv'";
+$sql = "SELECT * FROM donors where email='onya@gmail.com'";
 $result = mysqli_query($conn, $sql);
 
 if ($result->num_rows > 0) {
@@ -12,7 +12,7 @@ if ($result->num_rows > 0) {
       $don=$row['address'];
     }
 }
-$sql = "SELECT * FROM volunteers where email='bkjsd@zc.bsjdv'";
+$sql = "SELECT * FROM volunteers where email='ivanema@gmail.com'";
 $result = mysqli_query($conn, $sql);
 
 if ($result->num_rows > 0) {
@@ -49,18 +49,8 @@ if ($result->num_rows > 0) {
 
 <body>
   <div>
-  Donor:
-   <input type="text" id="txtFrom" />
-   Volunteer:
-    <input type="text" id="txtTo" />
-  Mode of Travel:
-  <select id="mode">
-    <option value="DRIVING">Driving</option>
-    <option value="WALKING">Walking</option>
-    <option value="BICYCLING">Bicycling</option>
-    <option value="TRANSIT">Transit</option>
-  </select>
-    <button id="directions">Show Directions</button>
+
+    <button id="directions">Trace Donor</button>
     <div>
       <strong>Results</strong>
     </div>
@@ -71,8 +61,8 @@ if ($result->num_rows > 0) {
   <script>
    var map;
     $("#directions").click(function () {
-        var originLoc = "<?php echo $don ?>";
-          var destinationLoc = "<?php echo $don ?>" ;
+        var originLoc = "andheri";
+          var destinationLoc = "dadar";
       var selectedMode = document.getElementById('mode').value;
           var geocoder = new google.maps.Geocoder;
           var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -112,7 +102,7 @@ if ($result->num_rows > 0) {
       });
     }
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB02kJAA_uRSYZ823KxsKM3B1yQemFj4s&callback=initMap">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe46uoFVEaPTJJ3VQhFB-nOuXpRKGWwbE&callback=initMap">
 
   </script>
 </body>

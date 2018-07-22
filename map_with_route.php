@@ -57,7 +57,7 @@ if ($result->num_rows > 0) {
 <script>
 	 var map;
     $("#directions").click(function () {
-	      var originLoc = "<?php echo $res ?>"
+	      var originLoc = "<?php echo $res ?>";
           var destinationLoc = "dadar";
 		  var selectedMode = document.getElementById('mode').value;
           var geocoder = new google.maps.Geocoder;

@@ -21,6 +21,11 @@
 		padding: 5px;
 	}
 </style>
+<script type="text/javascript">
+	function showMsg(){
+		alert('Donors needs you','_self');
+	}
+</script>
 </head>
 <body>
 		<div class="container">
@@ -32,19 +37,21 @@
 			</div>
 		</div>
 			<div class="row">
+				<form action="volunteer_login.php" method="post">
 				<div class="col-xs-12">
-					<p>Email:</p><input type="email" name="E-mail" placeholder="example@gmail.com">
+					<p>Email:</p><input type="email" name="email" placeholder="example@gmail.com">
 				</div>
 				<div class="col-xs-12">
-					<p>Password:</p><input type="password" name="Password" placeholder="Enter your password">
+					<p>Password:</p><input type="password" name="password" placeholder="Enter your password">
 				
 				</div>	
 
 				<div class="col-xs-12">
-					<button type="submit" class="btn btn-primary btn-md" role="button" align="center">Login</button>
+					<button type="submit" class="btn btn-primary btn-md" role="button" align="center" onclick="showMsg();">Login</button>
 					<a href="volunteer.html" class="btn btn-primary btn-md" role="button" >Register as a Volunteer</a>
 				
 				</div>	
+				</form>
 			</div>	
 			</div>	
 
